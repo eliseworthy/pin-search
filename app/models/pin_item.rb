@@ -3,6 +3,7 @@ class PinItem < ActiveRecord::Base
   require 'nokogiri'
   require 'open-uri'
 
+  validates_uniqueness_of :url
   attr_accessible :url, :description
 
   def self.pin_search(args)
