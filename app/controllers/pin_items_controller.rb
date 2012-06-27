@@ -6,7 +6,7 @@ class PinItemsController < ApplicationController
   	if params[:search]
       @pin_items = PinItem.pin_search(params[:search])
     else
-      @pin_items = PinItem.all
+      @pin_items = PinItem.all.reverse
      end
     render json: @pin_items
   end
