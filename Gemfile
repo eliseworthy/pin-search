@@ -8,7 +8,10 @@ gem 'rails', '3.2.3'
 gem 'rails-api'
 gem 'nokogiri'
 
-gem 'sqlite3'
+
+gem 'sqlite3', group: :development
+
+gem 'pg', group: :production
 
 
 # To use ActiveModel has_secure_password
