@@ -3,6 +3,8 @@ class PinItemsController < ApplicationController
   # GET /pin_items.json
 
   def index
-    PinItem.all
+    @pin_items = PinItem.all
+
+    render :json @pin_items
   end
 end
