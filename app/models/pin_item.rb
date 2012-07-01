@@ -13,10 +13,10 @@ class PinItem < ActiveRecord::Base
     doc = Nokogiri::HTML(open(url))
 
     doc.css('.pin').each do |item|
-	  url = item.at_css(".PinImageImg")[:src]
-	  h = Hash.new
-	  h[:url] = url
-	  PinItem.create(url: url, description: description)
+  	  url = item.at_css(".PinImageImg")[:src]
+  	  h = Hash.new
+  	  h[:url] = url
+  	  PinItem.create(url: url, description: description)
     end
     PinItem.find_all_by_description(description).reverse
   end
